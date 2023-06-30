@@ -9,3 +9,9 @@ app.get('/api/hola', (req, res) => {
 app.listen(port, () => {
   console.log(`La API está escuchando en http://localhost:${port}`);
 });
+
+process.on('SIGINT', function() {
+  console.log('App is shutting down...');
+  // Realiza aquí cualquier limpieza o liberación de recursos necesarios antes de salir
+  process.exit();
+});
